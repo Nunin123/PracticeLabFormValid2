@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <form name="form1" onsubmit="return validateForm()">
+        <label for="login">Login</label>
+        <input type="text" id="login" name="logn" onchange="return validateLogin()" required>
+        <br/>
+        <label for="pass">Password</label>
+        <input type="password" id="pass" name="passw" onchange="return validatePassword()" onkeyup="passwordSec()" onkeydown="passwordSec()" required><span id="security"></span>
+        <br/>
+        <label for="confirmPass">Confirm Password</label>
+        <input type="password" id="confirmPass" name="confirm" onchange="return confirmPass()" required>
+        <br/>
+        <label for="gender">Gender</label>
+        <select id="gender" name="gen" required>
+            <option selected>male</option>
+            <option>female</option>
+        </select>
+        <br/>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="mail" onchange="return validateEmail()" required>
+        <br/>
+        <button type="submit" value="Register">Register</button>
+        <br/>
+        <h4 id="wrongPass"></h4>
+        <h4 id="wrongEmail"></h4>
+    </form>
+</body>
+</html>
