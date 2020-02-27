@@ -1,37 +1,49 @@
-
-body{
-	font-family: Arial, Helvetica, sans-serif;
+body {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	margin: 100px 500px;
 	color: white;
 }
 
-form {
-	max-width: 450px;
-	max-height: 300px;
-	background: #404040;
-	padding: 30px;
-	margin: 150px auto;
-	border: 10px ridge #000000;
-	outline: 3px solid white;
+#div1 {
+	background-color: gray;
+	padding: 30px 60px;
+	border: 20px solid black;
 }
 
-form label {
-	display: inline-block;
-	width: 150px;
-	text-align: left;
-  }
+#login {
+	margin-left: 90px;
+}
 
-select {
-	display: inline-block;
-	width: 144px;
-	text-align: left;
-	
+#pass {
+	margin-left: 61px;
+}
+
+#confirmPass {
+	margin-left: 2px;
+}
+
+#gender {
+	margin-left: 77.5px;
+}
+
+#email {
+	margin-left: 88px;
+}
+
+span {
+	font-size: small;
+	margin-left: 10px;
+}
+
+#div2 {
+	padding-bottom: 1px;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px;
+	padding: 5px 10px;
+	font-size: medium;
 }
 
-h5{
-	color: white;
+input, select {
+	padding-right: 40px;
 }

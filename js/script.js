@@ -1,58 +1,65 @@
 function validateForm() {
     var login = validateLogin();
     var password = validatePassword();
-    var confirmPass = confirmPass();
     var email = validateEmail();
 
-    if (login == false && password == false && confirmPass == false && email == false) {
-        alert("Registration failed!");
-        return false;
-    } else {
+    if (login == true && password == true && email == true) {
         alert("You are now registered! Data saved.");
         return true;
+    } else {
+        alert("Registration failed!");
+        return false;
     }
 }
 
 function validateLogin() {
-    if (document.getElementById("login").value == '') {
-        document.getElementById("login").style.backgroundColor = "pink";
+    var logName = document.getElementById("login");
+    
+    if (logName.value == '') {
+        logName.style.backgroundColor = "pink";
         return false;
     } else {
-        document.getElementById("login").style.backgroundColor = "lightgreen";
+        logName.style.backgroundColor = "lightgreen";
         return true;
     }
 }
 
-function validatePassword(){
-    if (document.getElementById("pass").value == '') {
-        document.getElementById("pass").style.backgroundColor = "pink";
-    } else {
-        document.getElementById("pass").style.backgroundColor = "lightgreen";
-    }
-}
+function validatePassword() {
+    var pass1 = document.getElementById("pass");
+    var pass2 = document.getElementById("confirmPass");
 
-function confirmPass() {
-    if (document.getElementById("confirmPass").value != document.getElementById("pass").value) {
+    if (pass2.value != pass1.value) {
+        pass2.style.backgroundColor = "pink"
         document.getElementById("wrongPass").innerHTML = "Passwords are not the same";
-        document.getElementById("confirmPass").style.backgroundColor = "pink";
         return false;
     } else {
+        pass2.style.backgroundColor = "lightgreen"
         document.getElementById("wrongPass").innerHTML = '';
-        document.getElementById("confirmPass").style.backgroundColor = "lightgreen";
         return true;
+    }
+}
+
+function changeColor(){
+    var firstPass = document.getElementById("pass");
+
+    if (firstPass.value == '') {
+       firstPass.style.backgroundColor = "pink";
+    } else {
+        firstPass.style.backgroundColor = "lightgreen";
     }
 }
 
 function validateEmail() {
     var pattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var mail = document.getElementById("email");
 
-    if (!pattern.test(document.getElementById("email").value)) {
-        document.getElementById("email").style.backgroundColor = "pink";
+    if (!mail.value.match(pattern)) {
+        mail.style.backgroundColor = "pink";
         document.getElementById("wrongEmail").innerHTML = "Mail is wrong";
         return false;
     }
     else {
-        document.getElementById("email").style.backgroundColor = "lightgreen";
+        mail.style.backgroundColor = "lightgreen";
         document.getElementById("wrongEmail").innerHTML = "";
         return true;
     }
